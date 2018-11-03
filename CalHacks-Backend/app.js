@@ -4,36 +4,17 @@ require('dotenv').config()
 var MongoClient = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectID;
 
-app.get('/patients/:id', function(req, res) {
+app.get('/faq', function(req, res) {
     MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
-        const collection = client.db("calhacks-alzheimer").collection("patients");
-        collection.findOne({_id: new ObjectId(req.params.id)}, function(err,result){
-            res.send(result);
-        });
-        client.close();
-     });
-});
-
-app.get('/patients/:id/questions', function(req, res) {
-    MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
-        const collection = client.db("calhacks-alzheimer").collection("patients");
-        collection.findOne({_id: new ObjectId(req.params.id)}, function(err,result){
-            res.send(result["questions"]);
-        });
-        client.close();
-     });
-});
-
-app.get('/patients/:id/recommendations', function(req, res) {
-    MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
-        const collection = client.db("calhacks-alzheimer").collection("patients");
-        collection.findOne({_id: new ObjectId(req.params.id)}, function(err,result){
+        const collection = client.db("calhacks-alzheimer").collection("faqs");
+        collection.find({}).toArray(function(err,arr){
             res.send(arr);
         });
         client.close();
      });
 });
 
+// get all patients' information
 app.get('/patients', function(req, res) {
     MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
         const collection = client.db("calhacks-alzheimer").collection("patients");
@@ -44,6 +25,55 @@ app.get('/patients', function(req, res) {
      });
 });
 
+// get all information for a certain patient
+app.get('/patients/:id', function(req, res) {
+    MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
+        const collection = client.db("calhacks-alzheimer").collection("patients");
+        collection.findOne({_id: new ObjectId(req.params.id)}, function(err,result){
+            if(err) res.send("Not found.");
+            res.send(result);
+        });
+        client.close();
+     });
+});
+
+// get all questions for a certain patient
+app.get('/patients/:id/questions', function(req, res) {
+    MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
+        const collection = client.db("calhacks-alzheimer").collection("patients");
+        collection.findOne({_id: new ObjectId(req.params.id)}, function(err,result){
+            if(err) res.send("Not found.");
+            res.send(result["questions"]);
+        });
+        client.close();
+     });
+});
+
+// get all recommendations for a certain patient
+app.get('/patients/:id/recommendations', function(req, res) {
+    MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
+        const collection = client.db("calhacks-alzheimer").collection("patients");
+        collection.findOne({_id: new ObjectId(req.params.id)}, function(err,result){
+            if(err) res.send("Not found.");
+            res.send(result);
+        });
+        client.close();
+     });
+});
+
+// get all history for a certain patient
+app.get('/patients/:id/history', function(req, res) {
+    MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
+        const collection = client.db("calhacks-alzheimer").collection("patients");
+        collection.findOne({_id: new ObjectId(req.params.id)}, function(err,result){
+            if(err) res.send("Not found.");
+            res.send(result["history"]);
+        });
+        client.close();
+     });
+});
+
+// add a new status value to a certain patient's data
 app.post('/patients/:id/history/:value', function(req, res) {
     MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
         const collection = client.db("calhacks-alzheimer").collection("patients");
@@ -56,6 +86,7 @@ app.post('/patients/:id/history/:value', function(req, res) {
      });
 });
 
+// add a new question for a certain patient
 app.post('/patients/:id/questions/:value', function(req, res) {
     MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
         const collection = client.db("calhacks-alzheimer").collection("patients");
@@ -68,6 +99,7 @@ app.post('/patients/:id/questions/:value', function(req, res) {
      });
 });
 
+// add a new recommendation for a certain patient
 app.post('/patients/:id/recommendations/:value', function(req, res) {
     MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
         const collection = client.db("calhacks-alzheimer").collection("patients");
@@ -79,26 +111,33 @@ app.post('/patients/:id/recommendations/:value', function(req, res) {
         client.close();
      });
 });
-app.get('/questions', function(req, res) {
+
+app.get('/recommendations/:value', function(req, res) {
     MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
-        const collection = client.db("calhacks-alzheimer").collection("questions");
-        collection.find({}).toArray(function(err,arr){
-            res.send(arr);
-        });
-        client.close();
-     });
-});
-
-app.get('/recommendations', function(req, res) {
-    MongoClient.connect(PORT || process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
         const collection = client.db("calhacks-alzheimer").collection("recommendations");
-        collection.find({}).toArray(function(err,arr){
-            res.send(arr);
-        });
+        if(req.params.value < 3)
+        {
+            collection.find({stadium: "late"}).toArray(function(err,arr){
+                res.send(arr);
+            });
+        }
+        else if(req.params.value < 5)
+        {
+            collection.find({stadium: "middle"}).toArray(function(err,arr){
+                res.send(arr);
+            });
+        }
+        else
+        {
+            collection.find({stadium: "early"}).toArray(function(err,arr){
+                res.send(arr);
+            });      
+        }
         client.close();
      });
 });
 
+// run the app
 app.listen(process.env.PORT || 8080, function () {
   console.log('Example app listening on port ' + process.env.PORT || 8080 + '!');
 });
