@@ -29,3 +29,12 @@
 ### Charts in iOS
 
 - [https://www.appcoda.com/ios-charts-api-tutorial/](https://www.appcoda.com/ios-charts-api-tutorial/)
+
+## Accessing the app on Google App Engine
+
+- general URL: [https://calhacks-5.appspot.com/](https://calhacks-5.appspot.com/)
+- getting all patients: [https://calhacks-5.appspot.com/patients](https://calhacks-5.appspot.com/patients)
+- getting one specific patient: [https://calhacks-5.appspot.com/<patient_id>](https://calhacks-5.appspot.com/<patient_id>)
+- getting statistics for one patient: [https://calhacks-5.appspot.com/patients/<patient_id>/history](https://calhacks-5.appspot.com/patients/<patient_id>/history)
+- getting recommendations for one patient: [https://calhacks-5.appspot.com/patients/<patient_id>/recommendations](https://calhacks-5.appspot.com/patients/<patient_id>/recommendations)
+- getting questions for patient: [https://calhacks-5.appspot.com/patients/<patient_id>/questions](https://calhacks-5.appspot.com/patients/<patient_id>/questions)
