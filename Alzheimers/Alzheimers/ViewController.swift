@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBAction func Button(_ sender: Any) {
+        performSegue(withIdentifier: "FirstSegue", sender: self)
+    }
     @IBOutlet weak var label: UILabel?
 
     override func viewDidLoad() {
