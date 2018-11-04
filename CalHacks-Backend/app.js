@@ -4,6 +4,10 @@ require('dotenv').config()
 var MongoClient = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectID;
 
+app.get('/', function(req, res) {
+    res.send('<img src="https://thumbs.gfycat.com/CalculatingBabyishBushbaby-size_restricted.gif" width="100%" height="100%">');
+});
+
 app.get('/faq', function(req, res) {
     MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
         const collection = client.db("calhacks-alzheimer").collection("faqs");
