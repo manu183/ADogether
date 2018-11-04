@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qLk-GN-5Vh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TSu-Eh-2G3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,22 +25,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvt-Tx-CEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2274" y="-108"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="qvr-PR-e5K">
-            <objects>
-                <viewController id="CQ2-8O-6rQ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gXM-np-y4l">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="DRS-p3-5a3"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="RcG-Ta-54k"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U0b-Gf-ooM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-103" y="647"/>
         </scene>
         <!--Home Table View Controller-->
         <scene sceneID="fkt-Ad-0QS">
@@ -107,34 +91,14 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <state key="normal" title="Learn More &gt;"/>
+                                                    <connections>
+                                                        <action selector="QsButton:" destination="kWi-LX-SDa" eventType="touchUpInside" id="d4z-VO-cEm"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fmw-5B-ClM">
                                                     <rect key="frame" x="84" y="226" width="240" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="575" id="jVf-wB-S9V">
-                                        <rect key="frame" x="0.0" y="1184" width="375" height="575"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jVf-wB-S9V" id="iyQ-b5-n2Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="574.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kww-Dt-pQO">
-                                                    <rect key="frame" x="147" y="82" width="268" height="76"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <state key="normal" title="Learn more &gt;"/>
-                                                </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Progress" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1DF-YH-KqV">
-                                                    <rect key="frame" x="98" y="36" width="137" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -150,8 +114,7 @@
                     <connections>
                         <outlet property="aboutImg" destination="PRi-UM-Z1M" id="ldv-vT-asc"/>
                         <outlet property="imageView" destination="fmw-5B-ClM" id="SgP-hx-AYq"/>
-                        <segue destination="qLk-GN-5Vh" kind="show" identifier="QsButton" id="zvI-pR-4wi"/>
-                        <segue destination="CQ2-8O-6rQ" kind="push" identifier="progressSegue" id="kyR-sd-p5R"/>
+                        <segue destination="qLk-GN-5Vh" kind="show" identifier="QsSegue" id="zvI-pR-4wi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIs-0K-eP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -161,7 +124,6 @@
         <!--Question View Controller-->
         <scene sceneID="qHo-Rd-0dI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dDN-su-eMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="qLk-GN-5Vh" customClass="QuestionViewController" customModule="Alzheimers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xkY-Be-Tsw" customClass="Qu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -188,13 +150,6 @@
                                     <action selector="No:" destination="qLk-GN-5Vh" eventType="touchUpInside" id="mu8-nR-AZF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmA-JZ-bAa">
-                                <rect key="frame" x="118" y="191" width="79" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vza-Yk-bxA">
                                 <rect key="frame" x="31" y="301" width="30" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -203,6 +158,13 @@
                                     <action selector="Yes:" destination="qLk-GN-5Vh" eventType="touchUpInside" id="RuF-Cx-NmK"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmA-JZ-bAa">
+                                <rect key="frame" x="-40" y="64" width="366" height="308"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8E2-HB-beS"/>
@@ -213,6 +175,7 @@
                         <segue destination="Jw0-gR-bK3" kind="show" identifier="ToRecommendationSegue" id="61x-fD-L5P"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dDN-su-eMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-103.2" y="-125.4872563718141"/>
         </scene>
@@ -371,7 +334,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbV-rE-JSq">
                                 <rect key="frame" x="42" y="253" width="46" height="21"/>

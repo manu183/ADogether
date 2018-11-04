@@ -15,6 +15,12 @@ class HomeTableViewController: UITableViewController {
     @IBAction func aboutButton(_ sender: Any) {
         performSegue(withIdentifier: "aboutSegue", sender: self)
     }
+    
+    
+    @IBAction func QsButton(_ sender: Any) {
+        performSegue(withIdentifier: "QsSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
