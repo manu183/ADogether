@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		407B67D5218E867400A18157 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407B67D4218E867400A18157 /* SecondViewController.swift */; };
+		407B67D7218E879300A18157 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407B67D6218E879300A18157 /* AboutViewController.swift */; };
+		407B67D9218E885900A18157 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407B67D8218E885900A18157 /* HomeTableViewController.swift */; };
+		407B67DD218EAE7F00A18157 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407B67DC218EAE7F00A18157 /* QuestionViewController.swift */; };
+		407B67DF218ED91800A18157 /* RecommendationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407B67DE218ED91800A18157 /* RecommendationsViewController.swift */; };
 		A5D0AE99218DFE9C00B53A98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0AE98218DFE9C00B53A98 /* AppDelegate.swift */; };
 		A5D0AE9B218DFE9C00B53A98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0AE9A218DFE9C00B53A98 /* ViewController.swift */; };
 		A5D0AE9E218DFE9C00B53A98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D0AE9C218DFE9C00B53A98 /* Main.storyboard */; };
@@ -15,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		407B67D4218E867400A18157 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		407B67D6218E879300A18157 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		407B67D8218E885900A18157 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		407B67DC218EAE7F00A18157 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		407B67DE218ED91800A18157 /* RecommendationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsViewController.swift; sourceTree = "<group>"; };
 		A5D0AE95218DFE9C00B53A98 /* Alzheimers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alzheimers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D0AE98218DFE9C00B53A98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D0AE9A218DFE9C00B53A98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +66,12 @@
 			children = (
 				A5D0AE98218DFE9C00B53A98 /* AppDelegate.swift */,
 				A5D0AE9A218DFE9C00B53A98 /* ViewController.swift */,
+				407B67D4218E867400A18157 /* SecondViewController.swift */,
+				407B67D6218E879300A18157 /* AboutViewController.swift */,
+				407B67D8218E885900A18157 /* HomeTableViewController.swift */,
 				A5D0AE9C218DFE9C00B53A98 /* Main.storyboard */,
+				407B67DE218ED91800A18157 /* RecommendationsViewController.swift */,
+				407B67DC218EAE7F00A18157 /* QuestionViewController.swift */,
 				A5D0AE9F218DFE9C00B53A98 /* Assets.xcassets */,
 				A5D0AEA1218DFE9C00B53A98 /* LaunchScreen.storyboard */,
 				A5D0AEA4218DFE9C00B53A98 /* Info.plist */,
@@ -136,8 +151,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				407B67D5218E867400A18157 /* SecondViewController.swift in Sources */,
 				A5D0AE9B218DFE9C00B53A98 /* ViewController.swift in Sources */,
+				407B67DF218ED91800A18157 /* RecommendationsViewController.swift in Sources */,
+				407B67DD218EAE7F00A18157 /* QuestionViewController.swift in Sources */,
+				407B67D7218E879300A18157 /* AboutViewController.swift in Sources */,
 				A5D0AE99218DFE9C00B53A98 /* AppDelegate.swift in Sources */,
+				407B67D9218E885900A18157 /* HomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
