@@ -1,11 +1,29 @@
 var express = require('express');
 var app = express();
+const path = require('path');
 require('dotenv').config()
 var MongoClient = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectID;
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+app.use('/', express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/popper.js/dist/umd'), { maxAge: 31557600000 }));
+app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js'), { maxAge: 31557600000 }));
+app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/jquery/dist'), { maxAge: 31557600000 }));
+app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free/webfonts'), { maxAge: 31557600000 }))
 
 app.get('/', function(req, res) {
-    res.send('<img src="https://thumbs.gfycat.com/CalculatingBabyishBushbaby-size_restricted.gif" width="100%" height="100%">');
+    MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true },  function(err, client) {
+        const collection = client.db("calhacks-alzheimer").collection("patients");
+        collection.findOne({_id: new ObjectId("5bdd73081c9d440000697596")}, function(err,result){
+            if(err) res.send("Not found.");
+            res.render('patient', {
+                data: result["questions"]
+            });
+        });
+        client.close();
+     });
 });
 
 app.get('/faq', function(req, res) {
@@ -47,7 +65,9 @@ app.get('/patients/:id/questions', function(req, res) {
         const collection = client.db("calhacks-alzheimer").collection("patients");
         collection.findOne({_id: new ObjectId(req.params.id)}, function(err,result){
             if(err) res.send("Not found.");
-            res.send(result["questions"]);
+            res.render('patient', {
+                data: result["questions"]
+            });
         });
         client.close();
      });
